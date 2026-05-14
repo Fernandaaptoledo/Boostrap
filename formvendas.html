@@ -5,80 +5,187 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistema de Venda de Ingressos</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0d6efd, #6610f2);
+      min-height: 100vh;
+    }
+
+    .card-custom {
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .banner {
+      background: url('https://images.unsplash.com/photo-1501386761578-eac5c94b800a?q=80&w=1200&auto=format&fit=crop') center/cover;
+      height: 250px;
+      position: relative;
+    }
+
+    .banner-overlay {
+      background: rgba(0,0,0,0.5);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      text-align: center;
+    }
+
+    .badge-custom {
+      font-size: 0.9rem;
+      padding: 10px 15px;
+      border-radius: 20px;
+    }
+
+    .btn-custom {
+      border-radius: 12px;
+      padding: 10px 25px;
+      font-weight: 600;
+    }
+
+    .accordion-button {
+      font-weight: 600;
+    }
+  </style>
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container mt-5">
+<div class="container py-5">
+  <div class="card card-custom">
 
-  <!-- Cabeçalho -->
-  <div class="text-center mb-5">
-    <h1 class="display-5 fw-bold"> Sistema de Venda de Ingressos</h1>
-    <p class="lead">Garanta já sua entrada para o maior show do ano!</p>
-  </div>
-
-  <!-- Badges -->
-  <div class="mb-4 text-center">
-    <span class="badge bg-success p-2">Ingressos Disponíveis</span>
-    <span class="badge bg-warning text-dark p-2">Últimos Lotes</span>
-    <span class="badge bg-danger p-2">Show Imperdível</span>
-  </div>
-
-  <!-- Accordion -->
-  <div class="accordion" id="accordionShow">
-
-    <!-- Informações -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-           Informações do Evento
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionShow">
-        <div class="accordion-body">
-          O show acontecerá no dia <strong>20 de dezembro de 2026</strong>, às 21h, no estádio principal da cidade.
-        </div>
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-overlay">
+        <h1 class="display-5 fw-bold">Festival Music Live 2026</h1>
+        <p class="lead">O maior show do ano está chegando!</p>
       </div>
     </div>
 
-    <!-- Setores -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-           Setores Disponíveis
-        </button>
-      </h2>
-      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionShow">
-        <div class="accordion-body">
-          <ul>
-            <li>Pista</li>
-            <li>VIP</li>
-            <li>Camarote</li>
-          </ul>
-        </div>
+    <div class="card-body p-4">
+
+      <!-- Badges -->
+      <div class="text-center mb-4">
+        <span class="badge bg-success badge-custom">Ingressos Disponíveis</span>
+        <span class="badge bg-warning text-dark badge-custom">Últimos Lotes</span>
+        <span class="badge bg-danger badge-custom">Evento Premium</span>
       </div>
-    </div>
 
-    <!-- Benefícios -->
-    <div class="accordion-item">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-           Benefícios do Ingresso
-        </button>
-      </h2>
-      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionShow">
-        <div class="accordion-body">
-          Todos os compradores receberão uma camiseta exclusiva e um crachá personalizado.
+      <!-- Accordion -->
+      <div class="accordion mb-5" id="accordionShow">
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#infoEvento">
+               Informações do Evento
+            </button>
+          </h2>
+          <div id="infoEvento" class="accordion-collapse collapse show">
+            <div class="accordion-body">
+              Data: <strong>20 de dezembro de 2026</strong><br>
+              Horário: <strong>21h</strong><br>
+              Local: <strong>Arena Music Stadium</strong>
+            </div>
+          </div>
         </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#setores">
+               Setores Disponíveis
+            </button>
+          </h2>
+          <div id="setores" class="accordion-collapse collapse">
+            <div class="accordion-body">
+              <ul>
+                <li>Pista</li>
+                <li>VIP</li>
+                <li>Camarote</li>
+                <li>Área Premium</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <!-- Formulário -->
+      <h3 class="mb-4 text-center">Cadastro do Comprador</h3>
+
+      <form>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-floating">
+              <input type="text" class="form-control" id="nome" placeholder="Nome">
+              <label for="nome">Nome Completo</label>
+            </div>
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <div class="form-floating">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+              <label for="email">E-mail</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Input Group -->
+        <div class="input-group mb-3">
+          <span class="input-group-text">Telefone</span>
+          <input type="tel" class="form-control" placeholder="(00) 00000-0000">
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold"> Cor da Camiseta</label>
+            <input type="color" class="form-control form-control-color">
+          </div>
+
+          <div class="col-md-6 mb-3">
+            <label class="form-label fw-semibold"> Setor da Arquibancada</label>
+            <select class="form-select">
+              <option selected>Selecione o setor</option>
+              <option>Pista</option>
+              <option>VIP</option>
+              <option>Camarote</option>
+              <option>Área Premium</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-4">
+          <label class="form-label fw-semibold">📷 Foto para o Crachá</label>
+          <input type="file" class="form-control">
+        </div>
+
+        <!-- Checkbox -->
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="termos">
+          <label class="form-check-label" for="termos">
+            Aceito os termos e condições da compra.
+          </label>
+        </div>
+
+        <!-- Botões -->
+        <div class="d-flex gap-3 justify-content-center">
+          <button type="submit" class="btn btn-success btn-custom">💾 Salvar</button>
+          <button type="reset" class="btn btn-outline-secondary btn-custom">🧹 Limpar</button>
+        </div>
+
+      </form>
+
     </div>
-
   </div>
-
-  <!-- Botão -->
-  <div class="text-center mt-4">
-    <button class="btn btn-primary btn-lg">Comprar Ingresso</button>
-  </div>
-
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
