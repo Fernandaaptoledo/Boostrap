@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Venda de Ingressos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+
+  <!-- Cabeçalho -->
+  <div class="text-center mb-5">
+    <h1 class="display-5 fw-bold"> Sistema de Venda de Ingressos</h1>
+    <p class="lead">Garanta já sua entrada para o maior show do ano!</p>
+  </div>
+
+  <!-- Badges -->
+  <div class="mb-4 text-center">
+    <span class="badge bg-success p-2">Ingressos Disponíveis</span>
+    <span class="badge bg-warning text-dark p-2">Últimos Lotes</span>
+    <span class="badge bg-danger p-2">Show Imperdível</span>
+  </div>
+
+  <!-- Accordion -->
+  <div class="accordion" id="accordionShow">
+
+    <!-- Informações -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+           Informações do Evento
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionShow">
+        <div class="accordion-body">
+          O show acontecerá no dia <strong>20 de dezembro de 2026</strong>, às 21h, no estádio principal da cidade.
+        </div>
+      </div>
+    </div>
+
+    <!-- Setores -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+           Setores Disponíveis
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionShow">
+        <div class="accordion-body">
+          <ul>
+            <li>Pista</li>
+            <li>VIP</li>
+            <li>Camarote</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Benefícios -->
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+           Benefícios do Ingresso
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionShow">
+        <div class="accordion-body">
+          Todos os compradores receberão uma camiseta exclusiva e um crachá personalizado.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Botão -->
+  <div class="text-center mt-4">
+    <button class="btn btn-primary btn-lg">Comprar Ingresso</button>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
